@@ -107,6 +107,7 @@ body {
 .word-balloon {
     color: var(--balloon);
 }
+
 .wrapper-balloon {
 
     width: 100%;
@@ -118,7 +119,6 @@ body {
     display: flex;
     justify-content: center;
     width: 31%;
-    cursor: pointer;
 }
 
 .balloon {
@@ -140,4 +140,16 @@ body {
     to {
         bottom: 520px;
     }
+}
+
+.title-allo {
+
+    cursor: pointer;
+    margin-right: 28px;
+    margin-left: 10px;
+}
+
+
+.word-allo {
+    letter-spacing: -20px;
 }
