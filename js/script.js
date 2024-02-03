@@ -9,21 +9,21 @@ const wrapper = document.querySelector('.wrapper-glasses');
 
 
 btnLeft.addEventListener('click', function () {
-    document.body.classList.add('left-active');
-    document.body.classList.remove('right-active');
+  document.body.classList.add('left-active');
+  document.body.classList.remove('right-active');
 
 });
 
 btnRight.addEventListener('click', function () {
-    document.body.classList.add('right-active');
-    document.body.classList.remove('left-active');
+  document.body.classList.add('right-active');
+  document.body.classList.remove('left-active');
 });
 
 
 
 wrapper.addEventListener('click', function () {
-    document.body.classList.remove('left-active');
-    document.body.classList.remove('right-active');
+  document.body.classList.remove('left-active');
+  document.body.classList.remove('right-active');
 });
 
 
@@ -33,36 +33,39 @@ gsap.registerPlugin(ScrollTrigger);
 const glasses = document.querySelector('.glasses');
 
 gsap.to(".wrapper-glasses", {
-    scrollTrigger: {
-        trigger: ".wrapper-glasses",
-        start: "top top",
-        end: "+=110%",
-        scrub: true,
-    },
-    y: 400,
+  scrollTrigger: {
+    trigger: ".wrapper-glasses",
+    start: "top top",
+    end: "+=110%",
+    scrub: true,
+  },
+  y: 400,
 });
 
 /* BALLOON */
 
+const wordBalloon = document.querySelectorAll('.word-balloon');
 const titleBalloon = document.querySelector('.title-balloon');
 const wrapperBalloon = document.querySelector('.wrapper-balloon');
 
 function getRandomColor() {
-    const colors = ['#FF5733', '#fe0000', '#23a7f9', '#0f68a2', '#9fea23', '#4eba19', '#ff72da', '#2596be', '#a6dcfe', '#c97eff'];
+  const colors = ['#FF5733', '#fe0000', '#23a7f9', '#0f68a2', '#9fea23', '#4eba19', '#ff72da', '#2596be', '#a6dcfe', '#c97eff'];
 
-    // Sélectionne une couleur aléatoire dans le tableau
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
+  // Sélectionne une couleur aléatoire dans le tableau
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
 }
 
 function getRandomLeft() {
-    const array = ['25%', '35%', '45%', '55%', '65%'];
-    const randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex];
+  const array = ['-55%', '-45%', '-35%', '-25%', '-15%', '15%', '25%', '35%', '45%', '55%', '65%', '75%', '85%', '95%', '105%', '115%'];
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
 
 }
 
-titleBalloon.addEventListener('mouseenter', function () {
+for (const item of wordBalloon) {
+
+  item.addEventListener('mouseenter', function () {
     const balloon = document.createElement('div');
     balloon.innerHTML = `
     <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" >
@@ -82,4 +85,5 @@ titleBalloon.addEventListener('mouseenter', function () {
     balloon.style.left = getRandomLeft();
     titleBalloon.appendChild(balloon);
     balloon.classList.add('balloon-animation');
-});
+  });
+}
