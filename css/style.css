@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #F3F7F6;
+    --text: #0A0B0B;
+    --blue: #73b0ff;
+    --red: #ff7374;
+    --beige: #efac71;
+    --balloon: #FF5733;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    transition: background-color .7s ease-out;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+}
+
+.title {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 8vw;
+    font-family: 'Lilita One', sans-serif;
+    z-index: 10;
+}
+
+.title-glasses span:nth-child(odd) {
+    color: var(--blue);
+}
+
+.title-glasses span:nth-child(even) {
+    color: var(--red);
+}
+
+.glasses {
+    width: 160px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+.container-side {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+}
+
+.side {
+    position: relative;
+    left: 6px;
+    top: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10rem;
+    margin-right: 1.58rem;
+    cursor: pointer;
+}
+
+.left-active {
+    background-color: #73b0ff;
+    transition: background-color .5s ease-out;
+}
+
+.right-active {
+    background-color: #ff7374;
+    transition: background-color .5s ease-out;
+}
+
+.img {
+    width: 100%;
+}
+
+.wrapper-icecream {
+
+    width: 100%;
+    height: 100vh;
+}
+
+.word-icecream {
+    color: var(--beige);
+}
+
+.word-balloon {
+    color: var(--balloon);
+}
+.wrapper-balloon {
+
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.title-balloon {
+    display: flex;
+    justify-content: center;
+    width: 31%;
+    cursor: pointer;
+}
+
+.balloon {
+    position: absolute;
+    width: 15rem;
+    bottom: -670px;
+}
+
+.balloon-animation {
+    bottom: 520px;
+    animation: balloon 3s ease;
+}
+
+@keyframes balloon {
+    from {
+        bottom: -670px;
+    }
+
+    to {
+        bottom: 520px;
+    }
+}
